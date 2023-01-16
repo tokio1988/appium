@@ -16,10 +16,15 @@ public class ScrollToElement {
         capabilities.setCapability(MobileCapabilityType.APP,file.getAbsolutePath());
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 2 API 30");
 
+        System.out.println("Start");
+
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"),capabilities);
 
+        System.out.println("Start1");
         WebElement viewsOption = driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Views\").instance(0))");
         viewsOption.click();
+
+        System.out.println("Start2");
 
         WebElement listsOptions = driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\"Lists\").instance(0))");
         listsOptions.click();
